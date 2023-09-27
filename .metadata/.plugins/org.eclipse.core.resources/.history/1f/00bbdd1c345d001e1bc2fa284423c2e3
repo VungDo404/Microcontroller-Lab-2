@@ -250,6 +250,7 @@ int main(void)
 		  }
 		  if(hour >= 24) hour = 0;
 		  updateClockBuffer();
+
 		  setTimer(100, 1);
 	  }
 	  if(timer_flag[2] == 1){
