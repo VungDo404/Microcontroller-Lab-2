@@ -161,7 +161,7 @@ int main(void)
 {
   /* USER CODE BEGIN 1 */
 	  setTimer(100, 0);
-	  setTimer(100, 1);
+	  setTimer(50, 1);
 	  setTimer(100, 2);
   /* USER CODE END 1 */
 
@@ -233,7 +233,7 @@ int main(void)
 	  if(timer_flag[1] == 1){
 		  update7SEG(index_led++);
 		  if(index_led > 3) index_led = 0;
-		  setTimer(100, 1);
+		  setTimer(50, 1);
 	  }
 	  if(timer_flag[2] == 1){
 		  HAL_GPIO_TogglePin(GPIOA, DOT_Pin);

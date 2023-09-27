@@ -638,9 +638,9 @@ int main(void)
  8000574:	2100      	movs	r1, #0
  8000576:	2064      	movs	r0, #100	; 0x64
  8000578:	f000 f944 	bl	8000804 <setTimer>
-	  setTimer(50, 1);
+	  setTimer(100, 1);
  800057c:	2101      	movs	r1, #1
- 800057e:	2032      	movs	r0, #50	; 0x32
+ 800057e:	2064      	movs	r0, #100	; 0x64
  8000580:	f000 f940 	bl	8000804 <setTimer>
 	  setTimer(100, 2);
  8000584:	2102      	movs	r1, #2
@@ -706,9 +706,9 @@ int main(void)
  80005e8:	dd01      	ble.n	80005ee <main+0x86>
  80005ea:	2300      	movs	r3, #0
  80005ec:	61fb      	str	r3, [r7, #28]
-		  setTimer(50, 1);
+		  setTimer(100, 1);
  80005ee:	2101      	movs	r1, #1
- 80005f0:	2032      	movs	r0, #50	; 0x32
+ 80005f0:	2064      	movs	r0, #100	; 0x64
  80005f2:	f000 f907 	bl	8000804 <setTimer>
 	  }
 	  if(timer_flag[2] == 1){
