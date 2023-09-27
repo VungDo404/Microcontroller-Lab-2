@@ -1,9 +1,9 @@
-18:30:38 **** Incremental Build of configuration Debug for project Src ****
+18:46:37 **** Incremental Build of configuration Debug for project Src ****
 make -j12 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
 ../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:189:15: warning: unused variable 'MAX_LED' [-Wunused-variable]
-  189 |     const int MAX_LED = 4;
+../Core/Src/main.c:190:15: warning: unused variable 'MAX_LED' [-Wunused-variable]
+  190 |     const int MAX_LED = 4;
       |               ^~~~~~~
 arm-none-eabi-gcc -o "Src.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\LAB_2\Src\STM32F103C6UX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Src.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: Src.elf
@@ -12,7 +12,7 @@ arm-none-eabi-size   Src.elf
 arm-none-eabi-objdump -h -S  Src.elf  > "Src.list"
 arm-none-eabi-objcopy  -O ihex  Src.elf  "Src.hex"
    text	   data	    bss	    dec	    hex	filename
-   8272	     20	   1724	  10016	   2720	Src.elf
+   8488	     20	   1724	  10232	   27f8	Src.elf
 arm-none-eabi-objcopy  -O binary  Src.elf  "Src.bin"
 Finished building: default.size.stdout
  
