@@ -162,7 +162,6 @@ int main(void)
   /* USER CODE BEGIN 1 */
 	  setTimer(100, 0);
 	  setTimer(50, 1);
-	  setTimer(100, 2);
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -199,44 +198,20 @@ int main(void)
 	  }
 	  if(timer_flag[1] == 1){
 		  switch(state){
-		  	  	case 0:
+				case 0:
 					display7SEG(1);
 					HAL_GPIO_WritePin(GPIOA, EN0_Pin, RESET);
 					HAL_GPIO_WritePin(GPIOA, EN1_Pin, SET);
-					HAL_GPIO_WritePin(GPIOA, EN2_Pin, SET);
-					HAL_GPIO_WritePin(GPIOA, EN3_Pin, SET);
 					state = 1;
 					break;
 				case 1:
 					display7SEG(2);
-					HAL_GPIO_WritePin(GPIOA, EN0_Pin, SET);
 					HAL_GPIO_WritePin(GPIOA, EN1_Pin, RESET);
-					HAL_GPIO_WritePin(GPIOA, EN2_Pin, SET);
-					HAL_GPIO_WritePin(GPIOA, EN3_Pin, SET);
-					state = 2;
-					break;
-				case 2:
-					display7SEG(3);
 					HAL_GPIO_WritePin(GPIOA, EN0_Pin, SET);
-					HAL_GPIO_WritePin(GPIOA, EN1_Pin, SET);
-					HAL_GPIO_WritePin(GPIOA, EN2_Pin, RESET);
-					HAL_GPIO_WritePin(GPIOA, EN3_Pin, SET);
-					state = 3;
-					break;
-				case 3:
-					display7SEG(0);
-					HAL_GPIO_WritePin(GPIOA, EN0_Pin, SET);
-					HAL_GPIO_WritePin(GPIOA, EN1_Pin, SET);
-					HAL_GPIO_WritePin(GPIOA, EN2_Pin, SET);
-					HAL_GPIO_WritePin(GPIOA, EN3_Pin, RESET);
 					state = 0;
 					break;
 			}
 		    setTimer(50, 1);
-	  }
-	  if(timer_flag[2] == 1){
-		  HAL_GPIO_TogglePin(GPIOA, DOT_Pin);
-		  setTimer(100, 2);
 	  }
     /* USER CODE END WHILE */
 
@@ -370,7 +345,6 @@ static void MX_GPIO_Init(void)
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 	timerRun(0); // LED_RED
 	timerRun(1); // 7-segment
-	timerRun(2); // DOT
 };
 /* USER CODE END 4 */
 

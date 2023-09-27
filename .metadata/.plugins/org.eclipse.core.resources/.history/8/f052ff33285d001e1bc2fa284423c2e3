@@ -199,21 +199,17 @@ int main(void)
 	  }
 	  if(timer_flag[1] == 1){
 		  switch(state){
-		  	  	case 0:
+				case 0:
 					display7SEG(1);
 					HAL_GPIO_WritePin(GPIOA, EN0_Pin, RESET);
 					HAL_GPIO_WritePin(GPIOA, EN1_Pin, SET);
-					HAL_GPIO_WritePin(GPIOA, EN2_Pin, SET);
-					HAL_GPIO_WritePin(GPIOA, EN3_Pin, SET);
 					state = 1;
 					break;
 				case 1:
 					display7SEG(2);
-					HAL_GPIO_WritePin(GPIOA, EN0_Pin, SET);
 					HAL_GPIO_WritePin(GPIOA, EN1_Pin, RESET);
-					HAL_GPIO_WritePin(GPIOA, EN2_Pin, SET);
-					HAL_GPIO_WritePin(GPIOA, EN3_Pin, SET);
-					state = 2;
+					HAL_GPIO_WritePin(GPIOA, EN0_Pin, SET);
+					state = 0;
 					break;
 				case 2:
 					display7SEG(3);
