@@ -234,7 +234,6 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  //EX 8
 	  if(timer_flag[0] == 1){
 		  HAL_GPIO_TogglePin(GPIOA, LED_RED_Pin);
 		  setTimer(100, 0);
