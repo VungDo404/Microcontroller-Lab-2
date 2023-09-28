@@ -679,11 +679,11 @@ int main(void)
  80005c4:	603b      	str	r3, [r7, #0]
  80005c6:	2332      	movs	r3, #50	; 0x32
  80005c8:	623b      	str	r3, [r7, #32]
-
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+	  //EX 6
 	  if(timer_flag[0] == 1){
  80005ca:	4b2b      	ldr	r3, [pc, #172]	; (8000678 <main+0x110>)
  80005cc:	681b      	ldr	r3, [r3, #0]
