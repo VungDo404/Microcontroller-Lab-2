@@ -1,31 +1,7 @@
-23:20:40 **** Incremental Build of configuration Debug for project Src ****
+11:31:31 **** Incremental Build of configuration Debug for project Src ****
 make -j12 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'setRow':
-../Core/Src/main.c:293:8: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
-  293 |        if((code >> 4) & 0x01)
-      |        ^~
-../Core/Src/main.c:295:5: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
-  295 |     if((code >> 5) & 0x01)
-      |     ^~
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:191:15: warning: unused variable 'MAX_LED' [-Wunused-variable]
-  191 |     const int MAX_LED = 4;
-      |               ^~~~~~~
-arm-none-eabi-gcc -o "Src.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\LAB_2\Src\STM32F103C6UX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Src.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Src.elf
- 
 arm-none-eabi-size   Src.elf 
-arm-none-eabi-objdump -h -S  Src.elf  > "Src.list"
-arm-none-eabi-objcopy  -O ihex  Src.elf  "Src.hex"
    text	   data	    bss	    dec	    hex	filename
-   9260	     20	   1724	  11004	   2afc	Src.elf
-arm-none-eabi-objcopy  -O binary  Src.elf  "Src.bin"
+   9308	     20	   1724	  11052	   2b2c	Src.elf
 Finished building: default.size.stdout
- 
-Finished building: Src.hex
-Finished building: Src.bin
- 
-Finished building: Src.list
- 
  
