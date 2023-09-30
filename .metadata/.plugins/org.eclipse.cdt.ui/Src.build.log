@@ -1,10 +1,30 @@
-11:31:31 **** Incremental Build of configuration Debug for project Src ****
+21:46:22 **** Incremental Build of configuration Debug for project Src ****
 make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'setRow':
+../Core/Src/main.c:261:8: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+  261 |        if((code >> 4) & 0x01)
+      |        ^~
+../Core/Src/main.c:263:5: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+  263 |     if((code >> 5) & 0x01)
+      |     ^~
+arm-none-eabi-gcc -o "Src.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\LAB_2\Src\STM32F103C6UX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Src.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Src.elf
+ 
 arm-none-eabi-size   Src.elf 
+arm-none-eabi-objdump -h -S  Src.elf  > "Src.list"
+arm-none-eabi-objcopy  -O ihex  Src.elf  "Src.hex"
+arm-none-eabi-objcopy  -O binary  Src.elf  "Src.bin"
    text	   data	    bss	    dec	    hex	filename
    9308	     20	   1724	  11052	   2b2c	Src.elf
 Finished building: default.size.stdout
  
+Finished building: Src.bin
+Finished building: Src.hex
+ 
+ 
+Finished building: Src.list
+ 
 
-11:31:32 Build Finished. 0 errors, 0 warnings. (took 225ms)
+21:46:25 Build Finished. 0 errors, 1 warnings. (took 3s.134ms)
 
