@@ -1,12 +1,12 @@
-23:20:40 **** Incremental Build of configuration Debug for project Src ****
+11:36:11 **** Incremental Build of configuration Debug for project Src ****
 make -j12 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
 ../Core/Src/main.c: In function 'setRow':
-../Core/Src/main.c:293:8: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
-  293 |        if((code >> 4) & 0x01)
+../Core/Src/main.c:262:8: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+  262 |        if((code >> 4) & 0x01)
       |        ^~
-../Core/Src/main.c:295:5: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
-  295 |     if((code >> 5) & 0x01)
+../Core/Src/main.c:264:5: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+  264 |     if((code >> 5) & 0x01)
       |     ^~
 ../Core/Src/main.c: In function 'main':
 ../Core/Src/main.c:191:15: warning: unused variable 'MAX_LED' [-Wunused-variable]

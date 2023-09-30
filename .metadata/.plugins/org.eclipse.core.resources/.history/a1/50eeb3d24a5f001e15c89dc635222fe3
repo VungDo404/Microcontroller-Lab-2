@@ -343,7 +343,7 @@ int main(void)
 			  index_led_matrix = 0;
 
 		  }
-		  setTimer(1, 4); // 1 * 10ms = 10 ms
+		  setTimer(10, 4); // 1 * 10ms = 10 ms
 	  }
     /* USER CODE END WHILE */
 
